@@ -31,7 +31,7 @@ export default function TextForm(props) {
 
   const [text, setText] = useState(" ");
   return (
-    <div className="container">
+    <div className="container" style={{color:props.mode==='dark'?'white':'black'}}>
       <div className="mb-3">
         <h1>{props.title}</h1>
 
@@ -46,7 +46,7 @@ export default function TextForm(props) {
         <p>Words is {text.split(" ").length} and character is {text.length}</p>
         <p>Reading minutes {text.split(" ").length * 0.008}</p>
         <h2> Preview </h2>
-        <p>{text}</p>
+        <p>{text.length>1?text:"Enter something to preview"}</p>
       </div></div>
   )
 }
